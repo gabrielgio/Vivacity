@@ -1,8 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Vivacity.Library.Model;
 using System.Linq;
 
 namespace Vivacity.Library.Parser.Directory
@@ -12,7 +10,7 @@ namespace Vivacity.Library.Parser.Directory
         private string _rootDirectory;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Cities.Library.Parser.Directory.DirectoryParser"/> class.
+        /// Initializes a new instance of the <see cref="Vivacity.Library.Parser.Directory.DirectoryParser"/> class.
         /// </summary>
         /// <param name="rootDirctory">Root dirctory.</param>
         public DirectoryParser(string rootDirctory)

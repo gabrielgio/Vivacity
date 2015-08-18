@@ -100,31 +100,36 @@ namespace Vivacity.Library.Utils
             return lines.ToList();
         }
 
-        private static string GetClassName(string line)
+        /// <summary>
+        /// Gets the name of the class.
+        /// </summary>
+        /// <returns>The class name.</returns>
+        /// <param name="fileString">File string.</param>
+        public override string GetClassName(string fileString)
         {
             int i = 0;
 
-            for (; i < line.Length; i++)
+            for (; i < fileString.Length; i++)
             {
-                if (line[i] == '[')
+                if (fileString[i] == '[')
                 {
-                    while (line[i] != ']')
+                    while (fileString[i] != ']')
                         i++;
                     i++;
                 }
                 
-                if (line[i] != ' ')
+                if (fileString[i] != ' ')
                 {
                     int x = 1;
 
-                    while (line.ElementAtOrDefault(i + x) != '\n' && line.ElementAtOrDefault(i + x) != ' ' && line.Count() > (i+x))
+                    while (fileString.ElementAtOrDefault(i + x) != '\n' && fileString.ElementAtOrDefault(i + x) != ' ' && fileString.Count() > (i+x))
                     {
-                        if (line[i + x] == '<')
-                            while (line[i + x] != '>')
+                        if (fileString[i + x] == '<')
+                            while (fileString[i + x] != '>')
                                 x++;
                         x++;
                     }
-                    return new string(line.Skip(i).Take(x).ToArray());
+                    return new string(fileString.Skip(i).Take(x).ToArray());
                 }
             }
 

@@ -1,11 +1,5 @@
 ﻿using System;
-using Vivacity.Library.Parser;
-using System.Collections.Generic;
-using Vivacity.Library.Model;
 using Vivacity.Library.Builder;
-using Vivacity.Library.Parser.GitHub;
-using System.IO;
-using Newtonsoft.Json;
 
 namespace Cod2d
 {
@@ -21,19 +15,16 @@ namespace Cod2d
 
         private double pixel_unit = 0.001796491228;
 
-        private Project _project;
-
         public IcnRecode(Project project, double width, double heigth, Draw draw)
         {
             DrawLine = draw;
             _width = width;
             _heigth = heigth;
-            _project = project;
         }
 
         public void Exec()
         {
-            /* 
+            
             Node city = new Node("unicon", 570000, 1);
 
             Node config = new Node("config", 2042, 2);
@@ -148,14 +139,14 @@ namespace Cod2d
             tests.Add(new Node("graphics", 9770, 3));
             tests.Add(new Node("general", 4868, 3));
             tests.Add(new Node("bench", 1177, 3));
-            */
 
-            var root = _project.Root.Where((x, y, z) => x.Children.Count > 0);
-            Render(root, 0, 0, _width, _heigth, 0);
+
+  
+            Render(city, 0, 0, _width, _heigth, 0);
 
         }
 
-        public void Render(Node<Entity> node, double x, double y, double w, double h, int level)  
+        public void Render(Node node, double x, double y, double w, double h, int level)  
         {   
             double lw = Math.Log(300000, Math.E) - level*2;
             double myWidth = pixel_unit * 300000;

@@ -5,12 +5,12 @@ using System.Linq;
 namespace Vivacity.Library.Model
 {
     /// <summary>
-    /// Node of <see cref="Cities.Library.Tree`1"/>
+    /// Node of <see cref="Vivacity.Library.Model.Tree"/>
     /// </summary>
     public class Node<T>
     {
         /// <summary>
-        /// Value of the <see cref="Cities.Library.Node"/>.
+        /// Gets or sets the value.
         /// </summary>
         /// <value>The value.</value>
         public T Value { get; set; }
@@ -22,7 +22,7 @@ namespace Vivacity.Library.Model
         public List<Node<T>>  Children { get; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Cities.Library.Node`1"/> class.
+        /// Initializes a new instance of the <see cref="Vivacity.Library.Model.Node`1"/> class.
         /// </summary>
         public Node()
         {

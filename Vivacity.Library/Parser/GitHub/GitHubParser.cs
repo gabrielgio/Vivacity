@@ -17,6 +17,13 @@ namespace Vivacity.Library.Parser.GitHub
 
         private string _password;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Vivacity.Library.Parser.GitHub.GitHubParser"/> class.
+        /// </summary>
+        /// <param name="owner">Owner.</param>
+        /// <param name="project">Project.</param>
+        /// <param name="user">User.</param>
+        /// <param name="password">Password.</param>
         public GitHubParser(string owner, string project, string user, string password)
         {
             _owner = owner;
@@ -25,6 +32,9 @@ namespace Vivacity.Library.Parser.GitHub
             _user = user;
         }
 
+        /// <summary>
+        /// Read and get all files of a repo.
+        /// </summary>
         public IEnumerable<IFile> Read()
         {
             var task = ReadAsync();
