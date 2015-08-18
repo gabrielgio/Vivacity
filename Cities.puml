@@ -1,0 +1,233 @@
+@startuml
+
+package "Cities.Library" {
+
+  package "Cities.Library.Builder"{
+    class Entity{
+      string Type
+      string Namespace
+      DateTime Date
+      Entity Inheritance
+      IEnumerable<Entity> Aggregations
+    }
+
+    class EntityCollection{
+      int Count
+      bool IsReadOnly
+      void Add(Entity entity)
+      Add(ParseResult, DateTime)
+      Add(string, string, DateTime, IEnumerable<string>, string inheritance)
+      void Clear()
+      bool Contains(Entity)
+      CopyTo(Entity[], int)
+      bool Remove(int)
+      bool Remove(string)
+      bool Remove(Entity)
+    }
+
+    class LayoutGenerator{
+      City Generate(Project)
+    }
+
+    enum ProjectType{
+      Unicon
+      CSharp
+      Java
+      Unknown
+    }
+
+    class Project{
+      EntityCollection Entities
+      Node<Entity> Root
+      ProjectType ProjectType
+      Project(EntityCollection, Node<Entity>, ProjectType)
+      EntityCollection MakeEntities(IEnumerable<IFile>)
+      Node<Entity> MakeTree(EntityCollection)
+      Project CreateProject(IEnumerable<IFile> files)
+    }
+  }
+
+  package "Cities.Library.Utils" {
+
+    class BaseParser{
+      BaseParser(string, string, string)
+      ParseResult Parse(string)
+      ParseResult Parse(IFile)
+      List<string> GetAggragations(string)
+    }
+
+    class ParseResult{
+      string Type
+      string Namespace
+      string Inheritance
+      IEnumerable<string> Agrregations
+    }
+
+    class CsParser{
+      string ObjectRegex
+      string NamespaceRagex
+      string AggregationsRagex
+    }
+
+    class IcnParser{
+      string ObjectRegex
+      string NamespaceRagex
+      string AggregationsRagex
+    }
+
+    class JavaParser{
+      string ObjectRegex
+      string NamespaceRagex
+      string AggregationsRagex
+    }
+  }
+
+  package "Cities.Library.Generator.Model" {
+
+    class Size {
+      double Width
+      double Length
+      double Heigth
+      Size()
+      Size(double,double,double)
+    }
+
+    class Position {
+      double X
+      double Y
+      Position()
+      Position(double,double)
+    }
+
+    class Street{
+      Position Initial
+      Position Final
+    }
+
+    class Building{
+      Position Position
+      Size Size
+      Building()
+      Building(Size, Position)
+      Building(double,bouble,bouble,bouble,bouble)DirectoryFi
+    }
+
+    class City {
+      Parallelepiped[] Buildings
+      Street[] Streets
+    }
+
+    class Node<T>{
+      T Value
+      Node<T>[] Children
+      Add(Node<T>)
+      Remove(Node<T>)
+      Remove(int)
+    }
+
+    class Tree<T>{
+      Node<T> Root
+      Tree(IParser)
+      Read()
+      Normilize(double, double)
+    }
+  }
+
+  package "Cities.Library.Generator.Parser" {
+
+    interface IFile {
+      DateTimeOffset Date
+      long Revisions
+      string Path
+      byte[] GetRawData()
+    }
+
+    interface IParser<T> {
+      IEnumerable<IFile> Read();
+    }
+
+    package "Cities.Library.Generator.Parser.GitHub" {
+
+        class GitHubParser {
+          GitHubParser(string, string, string, string)
+          IEnumerable<IFile> Read()
+        }
+
+        class GitHubFile {
+          public string RawDataUrl
+          public string Sha
+          public DateTimeOffset Date
+          public long Revisions
+          public string Path
+          public List<Change> Changes
+          GetRawData()
+        }
+
+        class Change {
+          public string ChangeType
+          public DateTimeOffset Date
+          public int AddedLines
+          public int DeletedLines
+          public int TotalChanges
+        }
+    }
+
+    package "Cities.Library.Generator.Parser.Directory" {
+
+      class DirectoryParser {
+        DirectoryParser(string)
+        Node<T> Read()
+      }
+
+      class DirectoryFile {
+        DateTimeOffset Date
+        long Revisions
+        string Path
+        byte[] GetRawData()
+      }
+    }
+  }
+}
+
+package "Cities.View" {
+  class MainWindow {
+    Display()
+  }
+}
+
+
+Size --* Building
+Position --* Building
+
+Position --* Street
+
+Street --* City
+Building --* City
+
+City --* LayoutGenerator
+Project --* LayoutGenerator
+
+Tree *-- Node
+
+Change --* GitHubFile
+GitHubFile --* GitHubParser
+
+DirectoryParser <|-- IParser
+GitHubParser <|-- IParser
+
+IFile <|-- GitHubFile
+IFile <|-- DirectoryFile
+
+City --* MainWindow
+
+BaseParser <|-- CsParser
+BaseParser <|-- JavaParser
+BaseParser <|-- IcnParser
+ParseResult --* BaseParser
+
+Entity --* EntityCollection
+ProjectType --* Project
+EntityCollection --* Project
+
+
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+
+Parser --> Project : List of files
+Project --> LayoutGenerator : Creates entities and its tree
+LayoutGenerator --> View : Generate street's layout
+
+@enduml
