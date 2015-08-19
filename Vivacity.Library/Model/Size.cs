@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
 
 namespace Vivacity.Library.Model
 {
@@ -33,7 +34,7 @@ namespace Vivacity.Library.Model
         public double Ratio { get { return Width / Length; } }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Vivacity.Library.Model.Size"/> class.
+        /// Initializes a new instance of the <see cref="Cities.Library.Model.Size"/> class.
         /// </summary>
         public Size()
         {
@@ -41,7 +42,7 @@ namespace Vivacity.Library.Model
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Vivacity.Library.Model.Size"/> class.
+        /// Initializes a new instance of the <see cref="Cities.Library.Model.Size"/> class.
         /// </summary>
         /// <param name="width">Width.</param>
         /// <param name="heigth">Heigth.</param>

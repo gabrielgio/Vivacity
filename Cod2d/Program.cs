@@ -1,9 +1,12 @@
-﻿using Gtk;
+﻿using System;
+using Gtk;
 using System.Collections.Generic;
+using Vivacity.Library;
 using Vivacity.Library.Parser;
 using Vivacity.Library.Parser.GitHub;
 using Vivacity.Library.Builder;
 using Vivacity.Library.Model;
+using System.Linq;
 using System.IO;
 using Newtonsoft.Json;
 
@@ -13,8 +16,8 @@ namespace Cod2d
     {
         private Project project;
 
-        private static string _username = "";
-        private static string _password = "";
+        private static string _username = "gabrielgio";
+        private static string _password = "Diablo@123";
         private string _owner = "JamesNK";
         private string _project = "Newtonsoft.Json";
 

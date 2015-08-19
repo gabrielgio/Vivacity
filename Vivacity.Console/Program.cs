@@ -11,8 +11,8 @@ namespace Cities.Console
 {
     class MainClass
     {
-        private static string _username = "";
-        private static string _password = "";
+        private static string _username = "gabrielgio";
+        private static string _password = "Diablo@123";
 
         public static void Main(string[] args)
         {
@@ -22,6 +22,16 @@ namespace Cities.Console
             Java();
             System.Console.WriteLine("Doing Unicon");
             Icn();
+
+           /* string fileString = File.ReadAllText("/Users/gabrielgiovaninidesouza/Downloads/sample.cs");
+            fileString = CsParser.RemoveComments(fileString);
+            File.WriteAllText("/Users/gabrielgiovaninidesouza/Downloads/noCommentsSample.cs", fileString);
+            fileString = CsParser.RemoveChars(fileString);
+            File.WriteAllText("/Users/gabrielgiovaninidesouza/Downloads/noCharSample.cs", fileString);
+            fileString = CsParser.RemoveStrings(fileString);
+            File.WriteAllText("/Users/gabrielgiovaninidesouza/Downloads/noStringSample.cs", fileString);
+            System.Console.WriteLine(fileString);*/
+
         }
 
         private static void Cs()

@@ -18,7 +18,7 @@
         public double Y { get; set;}
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Vivacity.Library.Model.Position"/> class.
+        /// Initializes a new instance of the <see cref="Cities.Library.Model.Position"/> class.
         /// </summary>
         public Position()
         {
@@ -26,7 +26,7 @@
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Vivacity.Library.Model.Position"/> class.
+        /// Initializes a new instance of the <see cref="Cities.Library.Model.Position"/> class.
         /// </summary>
         /// <param name="x">The x coordinate.</param>
         /// <param name="y">The y coordinate.</param>
@@ -37,11 +37,11 @@
         }
 
         /// <summary>
-        /// Determines whether the specified <see cref="System.Object"/> is equal to the current <see cref="Vivacity.Library.Model.Position"/>.
+        /// Determines whether the specified <see cref="System.Object"/> is equal to the current <see cref="Cities.Library.Model.Position"/>.
         /// </summary>
-        /// <param name="obj">The <see cref="System.Object"/> to compare with the current <see cref="Vivacity.Library.Model.Position"/>.</param>
+        /// <param name="obj">The <see cref="System.Object"/> to compare with the current <see cref="Cities.Library.Model.Position"/>.</param>
         /// <returns><c>true</c> if the specified <see cref="System.Object"/> is equal to the current
-        /// <see cref="Vivacity.Library.Model.Position"/>; otherwise, <c>false</c>.</returns>
+        /// <see cref="Cities.Library.Model.Position"/>; otherwise, <c>false</c>.</returns>
         public override bool Equals(object obj)
         {
             if (obj == null)
@@ -60,7 +60,7 @@
         }
 
         /// <summary>
-        /// Serves as a hash function for a <see cref="Vivacity.Library.Model.Position"/> object.
+        /// Serves as a hash function for a <see cref="Cities.Library.Model.Position"/> object.
         /// </summary>
         /// <returns>A hash code for this instance that is suitable for use in hashing algorithms and data structures such as a
         /// hash table.</returns>

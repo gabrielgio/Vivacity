@@ -1,4 +1,6 @@
-﻿namespace Vivacity.Library.Model
+﻿using System;
+
+namespace Vivacity.Library.Model
 {
     /// <summary>
     /// Parallelepiped that represent a building
@@ -18,7 +20,7 @@
         public Size Size{ get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Vivacity.Library.Model.Building"/> class.
+        /// Initializes a new instance of the <see cref="Cities.Library.Model.Building"/> class.
         /// </summary>
         public Building()
         {
@@ -26,7 +28,7 @@
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Vivacity.Library.Model.Building"/> class.
+        /// Initializes a new instance of the <see cref="Cities.Library.Model.Building"/> class.
         /// </summary>
         /// <param name="position">Position.</param>
         /// <param name="size">Size.</param>
@@ -37,7 +39,7 @@
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Vivacity.Library.Model.Building"/> class.
+        /// Initializes a new instance of the <see cref="Cities.Library.Model.Building"/> class.
         /// </summary>
         /// <param name="x">The x coordinate.</param>
         /// <param name="y">The y coordinate.</param>
