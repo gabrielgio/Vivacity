@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Vivacity.Library.Model
+﻿namespace Vivacity.Library.Model
 {
     /// <summary>
     /// Position.

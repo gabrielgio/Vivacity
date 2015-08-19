@@ -1,7 +1,5 @@
-﻿using System;
-using Octokit;
+﻿using Octokit;
 using System.Linq;
-using Vivacity.Library;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

@@ -1,15 +1,11 @@
-﻿using System;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 using System.Collections.Generic;
-using Vivacity.Library;
 using Vivacity.Library.Parser.GitHub;
 using Vivacity.Library.Parser;
 using Vivacity.Library.Model;
 using Vivacity.Library.Builder;
 using Vivacity.Library.Parser.Directory;
 using Newtonsoft.Json;
-using Vivacity.Library.Utils;
 
 namespace Cities.Console
 {
