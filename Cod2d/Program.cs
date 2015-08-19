@@ -16,8 +16,8 @@ namespace Cod2d
     {
         private Project project;
 
-        private static string _username = "gabrielgio";
-        private static string _password = "Diablo@123";
+        private static string _username = "";
+        private static string _password = "";
         private string _owner = "JamesNK";
         private string _project = "Newtonsoft.Json";
 

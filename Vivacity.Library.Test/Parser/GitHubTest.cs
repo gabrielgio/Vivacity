@@ -10,8 +10,8 @@ namespace Citities.Library.Test
     [TestFixture()]
     public class GitHubTest
     {
-        private string _username = "gabrielgio";
-        private string _password = "Diablo@123";
+        private string _username = "";
+        private string _password = "";
         private string _owner = "JamesNK";
         private string _project = "Newtonsoft.Json";
 
